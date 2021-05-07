@@ -15,7 +15,7 @@ namespace MassTransitQueueDemo
 
             var busControl = CreateBusControl(configuration);
 
-            Task.Factory.StartNew(async () => await busControl.StartAsync());
+            await Task.Factory.StartNew(async () => await busControl.StartAsync());
 
             var sendEndpoint = await busControl.GetSendEndpoint(new Uri(configuration.QueueUrl));
 

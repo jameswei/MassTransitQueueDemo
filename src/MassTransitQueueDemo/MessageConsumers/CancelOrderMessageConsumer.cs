@@ -10,8 +10,7 @@ namespace MassTransitQueueDemo.MessageConsumers
         public Task Consume(ConsumeContext<CancelOrderMessage> context)
         {
             Console.WriteLine("A CancelOrderMessage has been received!");
-            Console.WriteLine($"Canceling order with ID {context.Message.OrderId}");
-
+            Console.WriteLine($"Cancelling order {context.Message.OrderId}");
             return Task.CompletedTask;
         }
     }
